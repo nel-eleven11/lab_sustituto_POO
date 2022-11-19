@@ -62,10 +62,6 @@ public class empresa {
             proyecto_nuevo.getParticipantes_p().add(this.participantes.get(par1));
             proyecto_nuevo.getParticipantes_p().add(this.participantes.get(par2));
             proyecto_nuevo.getParticipantes_p().add(this.participantes.get(par3));
-
-            
-            
-
         }while(rehacer==true);
 
     }

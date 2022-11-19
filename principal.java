@@ -69,12 +69,13 @@ public class principal {
         //menu
         int opcion = 0;
         while((opcion < 5) &&(opcion >= 0)) {
+            System.out.println("\n");
             System.out.println("1. Agregar participante");
             System.out.println("2. Agregar proyecto");
-            System.out.println("3. Asignar participante a proyecto");
-            System.out.println("4. Mostrar participantes");
-            System.out.println("6. Mostrar proyectos");
-            System.out.println("7. Salir");
+            System.out.println("3. Mostrar participantes");
+            System.out.println("4. Mostrar proyectos");
+            System.out.println("5. Salir");
+            System.out.println("\n");
             opcion = scanner.nextInt();
             scanner.nextLine();
 
@@ -124,7 +125,9 @@ public class principal {
                     try {
                         FileWriter myWriter = new FileWriter("Participantes.csv");
                         myWriter.write("Nombre, Tipo, Liderazgo, Colaboracion, Companeirismo, Experiencia, Conocimiento, Creatividad, Barato, Profesional, Tiempo completo\n");
-                        myWriter.write(nombre+ "," + tipo + "," + liderazgo + "," + colaboracion + "," + companeirismo + "," + experiencia + "," + conocimiento + "," + creatividad + "," + barato + "," + profesional + "," + tiempo_completo + "\n");
+                        for (int i = 0; i < empresa_nelson.getParticipantes().size(); i++) {
+                            myWriter.write(empresa_nelson.getParticipantes().get(i).getNombre() + "," + empresa_nelson.getParticipantes().get(i).getTipo() + "," + empresa_nelson.getParticipantes().get(i).isLiderazgo() + "," + empresa_nelson.getParticipantes().get(i).isColaboracion() + "," + empresa_nelson.getParticipantes().get(i).isCompaneirismo() + "," + empresa_nelson.getParticipantes().get(i).isExperiencia() + "," + empresa_nelson.getParticipantes().get(i).isConocimiento() + "," + empresa_nelson.getParticipantes().get(i).isCreatividad() + "," + empresa_nelson.getParticipantes().get(i).isBarato() + "," + empresa_nelson.getParticipantes().get(i).isProfesional() + "," + empresa_nelson.getParticipantes().get(i).isTiempo_completo() + "\n");
+                        }
                         myWriter.close();                                                                                               
                     
                     }catch (IOException e) {
@@ -183,11 +186,13 @@ public class principal {
 
                 case 3:
                     //mostrar participantes
+                    System.out.println("Participantes: ");
                     empresa_nelson.mostrar_participantes();
                     break;
 
                 case 4:
                     //mostrar proyectos
+                    System.out.println("Proyectos: ");
                     empresa_nelson.mostrar_proyectos();
                     break;
 
