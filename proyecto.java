@@ -35,7 +35,7 @@ public class proyecto {
         this.profesional = profesional;
         this.tiempo_completo = tiempo_completo;
         this.nombre_proyecto = nombre_proyecto;
-        this.participantes_p = new ArrayList<participante>();
+        this.participantes_p = new ArrayList<participante>(3);
     }
 
 

@@ -53,11 +53,15 @@ public class empresa {
             int par1 = 0;
             int par2 = 0;
             int par3 = 0;
-            while(par1 == par2 || par1 == par3 || par2 == par3){
-                par1 = (int) (Math.random() * this.participantes.size());
+            par1 = (int) (Math.random() * this.participantes.size());
+            do{
                 par2 = (int) (Math.random() * this.participantes.size());
+            }while(par1==par2);
+            do{
                 par3 = (int) (Math.random() * this.participantes.size());
-            }
+            }while((par1==par3)||(par2==par3));
+            
+            
             //se agregan los participantes al proyecto
             proyecto_nuevo.getParticipantes_p().add(this.participantes.get(par1));
             proyecto_nuevo.getParticipantes_p().add(this.participantes.get(par2));
