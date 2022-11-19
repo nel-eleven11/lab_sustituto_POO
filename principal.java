@@ -141,7 +141,7 @@ public class principal {
                     //agregar proyecto
                     System.out.println("Ingrese el nombre del proyecto");
                     String nombre_proyecto = scanner.nextLine();
-                    System.out.println("Ingrese el tipo de proyecto: \n1. investigativo\n2. nuevo cliente\n3. mantenimiento\4. interno");
+                    System.out.println("Ingrese el tipo de proyecto: \n1. investigativo\n2. nuevo cliente\n3. mantenimiento\n4. interno");
                     int num_proyecto = scanner.nextInt();
                     String tipo_proyecto = "";
                     boolean liderazgo_p = false;

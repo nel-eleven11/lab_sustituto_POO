@@ -7,7 +7,7 @@
  */
 
 import java.util.ArrayList;
-
+import java.util.Random;
 
 public class empresa {
 
@@ -47,18 +47,19 @@ public class empresa {
     public void nuevo_proyecto(String tipo, boolean liderazgo, boolean colaboracion, boolean companeirismo, boolean experiencia, boolean conocimiento, boolean creatividad, boolean barato, boolean profesional, boolean tiempo_completo, String nombre_proyecto){
         proyecto proyecto_nuevo = new proyecto(tipo, liderazgo, colaboracion, companeirismo, experiencia, conocimiento, creatividad, barato, profesional, tiempo_completo, nombre_proyecto);
         this.proyectos.add(proyecto_nuevo);
+        Random random = new Random();
         boolean rehacer = true;
         do{
             //se eligen 3 participantes aleatoriamente
             int par1 = 0;
             int par2 = 0;
             int par3 = 0;
-            par1 = (int) (Math.random() * this.participantes.size());
+            par1 = random.nextInt(this.participantes.size());
             do{
-                par2 = (int) (Math.random() * this.participantes.size());
+                par2 = random.nextInt(this.participantes.size());
             }while(par1==par2);
             do{
-                par3 = (int) (Math.random() * this.participantes.size());
+                par3 = random.nextInt(this.participantes.size());
             }while((par1==par3)||(par2==par3));
             
             
