@@ -128,7 +128,7 @@ public class principal {
                     try {
                         FileWriter myWriter = new FileWriter("Participantes.csv");
                         myWriter.write("Nombre, Tipo, Liderazgo, Colaboracion, Companeirismo, Experiencia, Conocimiento, Creatividad, Barato, Profesional, Tiempo completo\n");
-                        for (int i = 0; i < empresa_nelson.getParticipantes().size(); i++) {
+                        for (int i = 1; i < empresa_nelson.getParticipantes().size(); i++) {
                             myWriter.write(empresa_nelson.getParticipantes().get(i).getNombre() + "," + empresa_nelson.getParticipantes().get(i).getTipo() + "," + empresa_nelson.getParticipantes().get(i).isLiderazgo() + "," + empresa_nelson.getParticipantes().get(i).isColaboracion() + "," + empresa_nelson.getParticipantes().get(i).isCompaneirismo() + "," + empresa_nelson.getParticipantes().get(i).isExperiencia() + "," + empresa_nelson.getParticipantes().get(i).isConocimiento() + "," + empresa_nelson.getParticipantes().get(i).isCreatividad() + "," + empresa_nelson.getParticipantes().get(i).isBarato() + "," + empresa_nelson.getParticipantes().get(i).isProfesional() + "," + empresa_nelson.getParticipantes().get(i).isTiempo_completo() + "\n");
                         }
                         myWriter.close();                                                                                               

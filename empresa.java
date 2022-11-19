@@ -63,7 +63,96 @@ public class empresa {
             do{
                 par3 = random.nextInt(this.participantes.size());
             }while((par1==par3)||(par2==par3));
-            System.out.println("Los participantes elegidos son: "+this.participantes.get(par1).getNombre()+", "+this.participantes.get(par2).getNombre()+", "+this.participantes.get(par3).getNombre());
+            
+            //se calcula el puntaje de cada participante, el puntaje es sobre 90 en total
+            int puntaje1 = 0;
+            int puntaje2 = 0;
+            int puntaje3 = 0;
+            
+            if(this.participantes.get(par1).isLiderazgo() == proyecto_nuevo.isLiderazgo()){
+                puntaje1 += 10;
+            }
+            if(this.participantes.get(par1).isColaboracion() == proyecto_nuevo.isColaboracion()){
+                puntaje1 += 10;
+            }
+            if(this.participantes.get(par1).isCompaneirismo() == proyecto_nuevo.isCompaneirismo()){
+                puntaje1 += 10;
+            }
+            if(this.participantes.get(par1).isExperiencia() == proyecto_nuevo.isExperiencia()){
+                puntaje1 += 10;
+            }
+            if(this.participantes.get(par1).isConocimiento() == proyecto_nuevo.isConocimiento()){
+                puntaje1 += 10;
+            }
+            if(this.participantes.get(par1).isCreatividad() == proyecto_nuevo.isCreatividad()){
+                puntaje1 += 10;
+            }
+            if(this.participantes.get(par1).isBarato() == proyecto_nuevo.isBarato()){
+                puntaje1 += 10;
+            }
+            if(this.participantes.get(par1).isProfesional() == proyecto_nuevo.isProfesional()){
+                puntaje1 += 10;
+            }
+            if(this.participantes.get(par1).isTiempo_completo() == proyecto_nuevo.isTiempo_completo()){
+                puntaje1 += 10;
+            }
+            if(this.participantes.get(par2).isLiderazgo() == proyecto_nuevo.isLiderazgo()){
+                puntaje2 += 10;
+            }
+            if(this.participantes.get(par2).isColaboracion() == proyecto_nuevo.isColaboracion()){
+                puntaje2 += 10;
+            }
+            if(this.participantes.get(par2).isCompaneirismo() == proyecto_nuevo.isCompaneirismo()){
+                puntaje2 += 10;
+            }
+            if(this.participantes.get(par2).isExperiencia() == proyecto_nuevo.isExperiencia()){
+                puntaje2 += 10;
+            }
+            if(this.participantes.get(par2).isConocimiento() == proyecto_nuevo.isConocimiento()){
+                puntaje2 += 10;
+            }
+            if(this.participantes.get(par2).isCreatividad() == proyecto_nuevo.isCreatividad()){
+                puntaje2 += 10;
+            }
+            if(this.participantes.get(par2).isBarato() == proyecto_nuevo.isBarato()){
+                puntaje2 += 10;
+            }
+            if(this.participantes.get(par2).isProfesional() == proyecto_nuevo.isProfesional()){
+                puntaje2 += 10;
+            }
+            if(this.participantes.get(par2).isTiempo_completo() == proyecto_nuevo.isTiempo_completo()){
+                puntaje2 += 10;
+            }
+            if(this.participantes.get(par3).isLiderazgo() == proyecto_nuevo.isLiderazgo()){
+                puntaje3 += 10;
+            }
+            if(this.participantes.get(par3).isColaboracion() == proyecto_nuevo.isColaboracion()){
+                puntaje3 += 10;
+            }
+            if(this.participantes.get(par3).isCompaneirismo() == proyecto_nuevo.isCompaneirismo()){
+                puntaje3 += 10;
+            }
+            if(this.participantes.get(par3).isExperiencia() == proyecto_nuevo.isExperiencia()){
+                puntaje3 += 10;
+            }
+            if(this.participantes.get(par3).isConocimiento() == proyecto_nuevo.isConocimiento()){
+                puntaje3 += 10;
+            }
+            if(this.participantes.get(par3).isCreatividad() == proyecto_nuevo.isCreatividad()){
+                puntaje3 += 10;
+            }
+            if(this.participantes.get(par3).isBarato() == proyecto_nuevo.isBarato()){
+                puntaje3 += 10;
+            }
+            if(this.participantes.get(par3).isProfesional() == proyecto_nuevo.isProfesional()){
+                puntaje3 += 10;
+            }
+            if(this.participantes.get(par3).isTiempo_completo() == proyecto_nuevo.isTiempo_completo()){
+                puntaje3 += 10;
+            }
+
+            System.out.println("Los participantes elegidos son y sun puntaje sobre 90: " + this.participantes.get(par1).getNombre() + " " + puntaje1 + " " + this.participantes.get(par2).getNombre() + " " + puntaje2 + " " + this.participantes.get(par3).getNombre() + " " + puntaje3);
+
             
             System.out.println("¿Desea repetir el proceso? \n1. Si \n2. No\n");
             int opcion = 0;
