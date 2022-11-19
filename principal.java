@@ -36,33 +36,35 @@ public class principal {
             e.printStackTrace();
         }
 
-        //escribir archivo
-
-        /*try {
-            FileWriter myWriter = new FileWriter("Participantes.csv");
-            myWriter.write("Nombre, Tipo, Liderazgo, Colaboracion, Companeirismo, Experiencia, Conocimiento, Creatividad, Barato, Profesional, Tiempo completo\n");
-            myWriter.write(nombre+ "," + tipo + "," + liderazgo + "," + colaboracion + "," + companeirismo + "," + experiencia + "," + conocimiento + "," + creatividad + "," + barato + "," + profesional + "," + tiempo_completo + "\n");
-            myWriter.close();                                                                                               
-        
-        }catch (IOException e) {
-            System.out.println("Ha ocurrido un error.");
-            e.printStackTrace();
-        }*/
-
-        //leer archivo e imprimirlo
-
-        /*try {
+        //obtener los participantes del archvios Participantes y guardarlos en el arraylist participantes de empresa
+        try {
             File my = new File("Participantes.csv");
             Scanner myReader = new Scanner(my);
             while (myReader.hasNextLine()) {
               String data = myReader.nextLine();
-              System.out.println(data);
+              String[] datos = data.split(",");
+              String nombre = datos[0];
+              String tipo = datos[1];
+              boolean liderazgo = Boolean.parseBoolean(datos[2]);
+              boolean colaboracion = Boolean.parseBoolean(datos[3]);
+              boolean companeirismo = Boolean.parseBoolean(datos[4]);
+              boolean experiencia = Boolean.parseBoolean(datos[5]);
+              boolean conocimiento = Boolean.parseBoolean(datos[6]);
+              boolean creatividad = Boolean.parseBoolean(datos[7]);
+              boolean barato = Boolean.parseBoolean(datos[8]);
+              boolean profesional = Boolean.parseBoolean(datos[9]);
+              boolean tiempo_completo = Boolean.parseBoolean(datos[10]);
+              participante participante_nuevo = new participante(nombre, tipo, liderazgo, colaboracion, companeirismo, experiencia, conocimiento, creatividad, barato, profesional, tiempo_completo);
+              empresa_nelson.getParticipantes().add(participante_nuevo);
             }
-            myReader.close();
-          } catch (FileNotFoundException e) {
+
+
+        } catch (FileNotFoundException e) {
             System.out.println("Ha ocurrido un error.");
             e.printStackTrace();
-          }*/
+          }
+
+
 
         //menu
         int opcion = 0;
@@ -118,6 +120,18 @@ public class principal {
                     }
 
                     empresa_nelson.agregar_participante(nombre, tipo, liderazgo, colaboracion, companeirismo, experiencia, conocimiento, creatividad, barato, profesional, tiempo_completo);
+                    
+                    try {
+                        FileWriter myWriter = new FileWriter("Participantes.csv");
+                        myWriter.write("Nombre, Tipo, Liderazgo, Colaboracion, Companeirismo, Experiencia, Conocimiento, Creatividad, Barato, Profesional, Tiempo completo\n");
+                        myWriter.write(nombre+ "," + tipo + "," + liderazgo + "," + colaboracion + "," + companeirismo + "," + experiencia + "," + conocimiento + "," + creatividad + "," + barato + "," + profesional + "," + tiempo_completo + "\n");
+                        myWriter.close();                                                                                               
+                    
+                    }catch (IOException e) {
+                        System.out.println("Ha ocurrido un error.");
+                        e.printStackTrace();
+                    }
+                
                     break;
 
                 case 2:
