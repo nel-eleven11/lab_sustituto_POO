@@ -15,6 +15,10 @@ import java.util.Scanner;
 
 public class principal {
 
+    
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
 
         

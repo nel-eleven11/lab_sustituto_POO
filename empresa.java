@@ -21,28 +21,72 @@ public class empresa {
     }
 
 
+    
+    /** 
+     * @return ArrayList<participante>
+     */
     public ArrayList<participante> getParticipantes() {
         return this.participantes;
     }
 
+    
+    /** 
+     * @param participantes
+     */
     public void setParticipantes(ArrayList<participante> participantes) {
         this.participantes = participantes;
     }
 
+    
+    /** 
+     * @return ArrayList<proyecto>
+     */
     public ArrayList<proyecto> getProyectos() {
         return this.proyectos;
     }
 
+    
+    /** 
+     * @param proyectos
+     */
     public void setProyectos(ArrayList<proyecto> proyectos) {
         this.proyectos = proyectos;
     }
 
+    
+    /** 
+     * @param nombre
+     * @param tipo
+     * @param liderazgo
+     * @param colaboracion
+     * @param companeirismo
+     * @param experiencia
+     * @param conocimiento
+     * @param creatividad
+     * @param barato
+     * @param profesional
+     * @param tiempo_completo
+     */
     //agregar participante
     public void agregar_participante(String nombre, String tipo, boolean liderazgo, boolean colaboracion, boolean companeirismo, boolean experiencia, boolean conocimiento, boolean creatividad, boolean barato, boolean profesional, boolean tiempo_completo){
 
         participante participante_nuevo = new participante(nombre, tipo, liderazgo, colaboracion, companeirismo, experiencia, conocimiento, creatividad, barato, profesional, tiempo_completo);
         this.participantes.add(participante_nuevo);
     }
+    
+    /** 
+     * @param tipo
+     * @param liderazgo
+     * @param colaboracion
+     * @param companeirismo
+     * @param experiencia
+     * @param conocimiento
+     * @param creatividad
+     * @param barato
+     * @param profesional
+     * @param tiempo_completo
+     * @param nombre_proyecto
+     */
     // nuevo proyecto
 
     public void nuevo_proyecto(String tipo, boolean liderazgo, boolean colaboracion, boolean companeirismo, boolean experiencia, boolean conocimiento, boolean creatividad, boolean barato, boolean profesional, boolean tiempo_completo, String nombre_proyecto){
