@@ -8,6 +8,7 @@
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class empresa {
 
@@ -49,6 +50,7 @@ public class empresa {
         this.proyectos.add(proyecto_nuevo);
         Random random = new Random();
         boolean rehacer = true;
+        Scanner sc = new Scanner(System.in);
         do{
             //se eligen 3 participantes aleatoriamente
             int par1 = 0;
@@ -61,12 +63,21 @@ public class empresa {
             do{
                 par3 = random.nextInt(this.participantes.size());
             }while((par1==par3)||(par2==par3));
+            System.out.println("Los participantes elegidos son: "+this.participantes.get(par1).getNombre()+", "+this.participantes.get(par2).getNombre()+", "+this.participantes.get(par3).getNombre());
             
+            System.out.println("¿Desea repetir el proceso? \n1. Si \n2. No\n");
+            int opcion = 0;
+            opcion = sc.nextInt();
+            if(opcion==1){
+                rehacer = true;
+            }else{
+                //se agregan los participantes al proyecto
             
-            //se agregan los participantes al proyecto
-            proyecto_nuevo.getParticipantes_p().add(this.participantes.get(par1));
-            proyecto_nuevo.getParticipantes_p().add(this.participantes.get(par2));
-            proyecto_nuevo.getParticipantes_p().add(this.participantes.get(par3));
+                proyecto_nuevo.getParticipantes_p().add(this.participantes.get(par1));
+                proyecto_nuevo.getParticipantes_p().add(this.participantes.get(par2));
+                proyecto_nuevo.getParticipantes_p().add(this.participantes.get(par3));
+                rehacer = false;
+            }   
         }while(rehacer==true);
 
     }
@@ -81,8 +92,12 @@ public class empresa {
 
     // mostrar proyectos
     public void mostrar_proyectos(){
+        String part = "";
         for (proyecto proyecto : proyectos) {
-            System.out.println(proyecto.getNombre_proyecto());
+            for(int i=0; i<proyecto.getParticipantes_p().size(); i++){
+                part = part + "  "+proyecto.getParticipantes_p().get(i).getNombre();
+            }
+            System.out.println(proyecto.getNombre_proyecto()+" "+proyecto.getTipo()+" "+part);
         }
     }
 
