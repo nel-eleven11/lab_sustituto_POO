@@ -21,7 +21,7 @@ public class proyecto {
     private boolean profesional; 
     private boolean tiempo_completo;
     private String nombre_proyecto;
-    private ArrayList<participante> participantes_p; 
+    private ArrayList<participante> participantes_p; //tienen que ser 3 participantes
 
     public proyecto(String tipo, boolean liderazgo, boolean colaboracion, boolean companeirismo, boolean experiencia, boolean conocimiento, boolean creatividad, boolean barato, boolean profesional, boolean tiempo_completo, String nombre_proyecto) {
         this.tipo = tipo;
